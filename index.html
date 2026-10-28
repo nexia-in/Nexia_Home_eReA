@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexia Virtual Desk | Global Digital Service Concierge</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Background Liquid Orbs -->
+  <div class="ambient-stage" aria-hidden="true">
+    <div class="liquid-orb orb-cyan"></div>
+    <div class="liquid-orb orb-violet"></div>
+    <div class="liquid-orb orb-amber"></div>
+    <div class="cyber-grid"></div>
+  </div>
+
+  <!-- LANGUAGE WELCOME GATEWAY MODAL -->
+  <div id="langGateModal" class="gate-backdrop">
+    <div class="liquid-glass gate-card">
+      <div class="gate-brand-header">
+        <div class="skeuo-logo-well">
+          <svg viewBox="0 0 60 60" width="46" height="46">
+            <defs>
+              <linearGradient id="nexiaGradGate" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#00f2fe" />
+                <stop offset="50%" stop-color="#4facfe" />
+                <stop offset="100%" stop-color="#b535f6" />
+              </linearGradient>
+            </defs>
+            <polygon points="30,3 55,17 55,43 30,57 5,43 5,17" fill="none" stroke="url(#nexiaGradGate)" stroke-width="3.5"/>
+            <path d="M20,41 L20,19 L40,41 L40,19" fill="none" stroke="#ffffff" stroke-width="4.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <span class="gate-eyebrow" id="gateExpBadge">ESTABLISHED 2009 • 17 YEARS OF EXCELLENCE</span>
+          <h1 class="gate-title">NEXIA VIRTUAL DESK</h1>
+        </div>
+      </div>
+
+      <p class="gate-desc-en">Welcome to our Global Digital Service Portal. Please choose your preferred language to explore our services.</p>
+      <p class="gate-desc-ml">നെക്സിയ വെർച്വൽ ഡെസ്കിലേക്ക് സ്വാഗതം. സേവനങ്ങളെക്കുറിച്ച് അറിയാൻ താങ്കൾക്ക് ഇഷ്ടമുള്ള ഭാഷ തിരഞ്ഞെടുക്കുക.</p>
+
+      <div class="gate-btn-grid">
+        <button type="button" class="skeuo-lang-btn" onclick="selectAppLanguage('ml')">
+          <span class="lang-indicator-dot dot-cyan"></span>
+          <div class="lang-btn-text">
+            <span class="lang-primary">മലയാളം</span>
+            <span class="lang-secondary">Malayalam Interface</span>
+          </div>
+          <span class="lang-arrow">→</span>
+        </button>
+
+        <button type="button" class="skeuo-lang-btn" onclick="selectAppLanguage('en')">
+          <span class="lang-indicator-dot dot-violet"></span>
+          <div class="lang-btn-text">
+            <span class="lang-primary">English</span>
+            <span class="lang-secondary">International Interface</span>
+          </div>
+          <span class="lang-arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN PORTAL CONTAINER -->
+  <div class="portal-wrapper">
+
+    <!-- STICKY HEADER -->
+    <header class="liquid-glass top-navbar">
+      <div class="brand-cluster">
+        <div class="skeuo-logo-sm">
+          <svg viewBox="0 0 60 60" width="32" height="32">
+            <polygon points="30,4 54,18 54,42 30,56 6,42 6,18" fill="none" stroke="#00f2fe" stroke-width="4"/>
+            <path d="M21,40 L21,20 L39,40 L39,20" fill="none" stroke="#ffffff" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-name-row">
+            <span class="brand-main-title">NEXIA</span>
+            <span class="brand-sub-pill">VIRTUAL DESK</span>
+          </div>
+          <p class="brand-exp-line" id="headerExpLine">17 Years of Trusted Digital Excellence</p>
+        </div>
+      </div>
+
+      <div class="nav-controls">
+        <div class="skeuo-rocker" role="group" aria-label="Language Switcher">
+          <button type="button" id="rockerML" class="rocker-key active" onclick="setLanguage('ml')">മലയാളം</button>
+          <button type="button" id="rockerEN" class="rocker-key" onclick="setLanguage('en')">ENG</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- 17th ANNIVERSARY DYNAMIC SVG BANNER -->
+    <section id="anniversaryBannerSection" class="anniversary-banner-wrap" style="display: none;">
+      <div class="liquid-glass anniversary-card">
+        <div class="anniv-svg-box" id="annivSvgContainer">
+          <!-- Dynamic SVG Injected from app.js -->
+        </div>
+        <div class="anniv-content">
+          <div class="anniv-pill-row">
+            <span class="anniv-pulse-dot"></span>
+            <span id="annivMonthTag" class="anniv-month-tag">NOVEMBER SPECIAL EDITION</span>
+          </div>
+          <h2 id="annivHeadline" class="anniv-headline">Celebrating 17 Years of Digital Service Leadership</h2>
+          <p id="annivDescription" class="anniv-subtext">
+            Since 2009, Nexia Virtual Desk has empowered thousands of clients across Kerala and globally with accurate online applications, international CVs, and administrative services without needing an in-person visit.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HERO SECTION -->
+    <section class="hero-welcome-box">
+      <div class="hero-status-chip">
+        <span class="neon-online-led"></span>
+        <span id="heroBadgeText">100% Online Digital Concierge • No Physical Visit Required</span>
+      </div>
+      <h2 id="heroQuestionTitle" class="hero-question">ഏത് സേവനമാണ് താങ്കൾക്ക് ഞങ്ങളിൽ നിന്ന് ആവശ്യമുള്ളത്?</h2>
+      <p id="heroInstructionSub" class="hero-instruction">
+        താഴെ നൽകിയിട്ടുള്ള 14 വിഭാഗങ്ങളിൽ നിന്ന് താങ്കൾക്ക് ആവശ്യമുള്ള സേവനങ്ങൾ തിരഞ്ഞെടുക്കുക. ഒന്നിലധികം സേവനങ്ങൾ ഒരേസമയം തിരഞ്ഞെടുക്കാവുന്നതാണ്.
+      </p>
+    </section>
+
+    <!-- 14 CATEGORIES ACCORDION CONTAINER -->
+    <main id="categoriesContainer" class="categories-stack">
+      <!-- Populated dynamically from content.js via app.js -->
+    </main>
+
+    <!-- PROFESSIONAL FOOTER -->
+    <footer class="liquid-glass portal-footer">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <div class="footer-title-row">
+            <span class="footer-logo-text">NEXIA VIRTUAL DESK</span>
+            <span id="footerExpTag" class="footer-exp-badge">17+ Years Experience</span>
+          </div>
+          <p id="footerTagline" class="footer-desc">
+            Global Career Documentation, Online Applications & Authorized Digital Service Provider.
+          </p>
+        </div>
+        <div class="footer-meta-col">
+          <p class="footer-credit-line" id="footerCreditText">Created by Nexia Tech | Nexia Virtual Desk</p>
+          <p class="footer-copy-line" id="footerCopyrightText">Copyright © 2009 - 2026 Nexia Virtual Desk. All Rights Reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- FLOATING BOTTOM SELECTION DOCK -->
+  <div id="selectionDock" class="selection-dock">
+    <div class="liquid-glass dock-inner">
+      <div class="dock-left">
+        <div class="skeuo-counter-orb" id="selectedCounterOrb">0</div>
+        <div class="dock-text-wrap">
+          <span id="dockTitleText" class="dock-main-label">സേവനങ്ങൾ തിരഞ്ഞെടുത്തിട്ടുണ്ട്</span>
+          <span id="dockSubText" class="dock-sub-label">വാട്സ്ആപ്പിലേക്ക് അയക്കാൻ തുടരുക</span>
+        </div>
+      </div>
+      <div class="dock-actions">
+        <button type="button" class="skeuo-btn-clear" onclick="clearAllSelections()" id="dockClearBtn">Clear</button>
+        <button type="button" class="skeuo-btn-neon" onclick="openCheckoutModal()">
+          <span id="dockProceedBtnText">Proceed Enquiry</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 1 MODAL: USER DETAILS & LIVE WHATSAPP PREVIEW -->
+  <div id="checkoutModal" class="modal-backdrop" style="display: none;">
+    <div class="liquid-glass modal-window">
+      <div class="modal-top-bar">
+        <div>
+          <span class="modal-step-tag" id="modalStepIndicator">FINAL STEP • WHATSAPP DISPATCH</span>
+          <h3 id="modalHeaderTitle" class="modal-heading">താങ്കളുടെ വിവരങ്ങൾ നൽകുക</h3>
+        </div>
+        <button type="button" class="skeuo-close-x" onclick="closeCheckoutModal()" aria-label="Close">✕</button>
+      </div>
+
+      <div class="modal-scroll-area">
+        <div class="form-grid">
+          <div class="input-field-group">
+            <label for="clientNameInput" id="labelClientName">താങ്കളുടെ പേര് (Your Full Name) *</label>
+            <input type="text" id="clientNameInput" class="skeuo-input" placeholder="e.g., Rahul Krishnan" oninput="refreshWhatsAppPreview()" />
+          </div>
+
+          <div class="input-field-group">
+            <label for="clientPhoneInput" id="labelClientPhone">മൊബൈൽ നമ്പർ (Mobile / WhatsApp Number) *</label>
+            <input type="tel" id="clientPhoneInput" class="skeuo-input" placeholder="e.g., 9876543210" oninput="refreshWhatsAppPreview()" />
+          </div>
+
+          <div class="input-field-group full-span">
+            <div class="label-row-split">
+              <label for="clientLocationInput" id="labelClientLocation">സ്ഥലം / ലൊക്കേഷൻ (Your Location / City) *</label>
+              <button type="button" class="geo-mini-btn" onclick="detectClientLocation()" id="geoDetectBtn">📍 Auto-Locate</button>
+            </div>
+            <input type="text" id="clientLocationInput" class="skeuo-input" placeholder="e.g., Olarikkara, Thrissur / Dubai, UAE" oninput="refreshWhatsAppPreview()" />
+          </div>
+
+          <div class="input-field-group full-span">
+            <label for="clientCustomNote" id="labelCustomNote">മറ്റ് വിവരങ്ങൾ / കുറിപ്പുകൾ (Additional Message - Optional)</label>
+            <textarea id="clientCustomNote" class="skeuo-textarea" rows="2" placeholder="താങ്കൾക്ക് പ്രത്യേകം എന്തെങ്കിലും സൂചിപ്പിക്കാനുണ്ടെങ്കിൽ ഇവിടെ എഴുതാം..." oninput="refreshWhatsAppPreview()"></textarea>
+          </div>
+        </div>
+
+        <p id="formErrorBanner" class="form-error-msg" style="display: none;"></p>
+
+        <!-- LIVE WHATSAPP PREVIEW BOX -->
+        <div class="wa-preview-frame">
+          <div class="wa-preview-topbar">
+            <span class="wa-live-dot"></span>
+            <span id="waPreviewHeaderTitle">LIVE WHATSAPP MESSAGE PREVIEW</span>
+          </div>
+          <pre id="waMessagePreviewText" class="wa-chat-bubble"></pre>
+        </div>
+
+        <!-- POLITE PROFESSIONAL REPRESENTATIVE NOTICE -->
+        <div class="rep-assurance-box">
+          <div class="rep-shield-icon">🛡️</div>
+          <div class="rep-notice-copy">
+            <p id="repNoticePrimary" class="rep-primary-line">
+              താങ്കൾ നൽകിയ വിവരങ്ങൾ വിശദമായി പരിശോധിച്ച ശേഷം, ഞങ്ങളുടെ പ്രതിനിധി വാട്സ്ആപ്പ് ചാറ്റിലൂടെ താങ്കളുമായി ബന്ധപ്പെടുന്നതാണ്.
+            </p>
+            <p id="repNoticeSecondary" class="rep-secondary-line">
+              താഴെ കാണുന്ന ബട്ടൺ അമർത്തുമ്പോൾ മുകളിലുള്ള സന്ദേശം ഞങ്ങളുടെ ഒഫീഷ്യൽ വാട്സ്ആപ്പിലേക്ക് (+919961850698) ഓപ്പൺ ആകുന്നതാണ്.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer-bar">
+        <button type="button" class="skeuo-btn-whatsapp" onclick="dispatchToWhatsApp()">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z"/>
+          </svg>
+          <span id="sendWaBtnLabel">Send to WhatsApp Now</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2 MODAL: POST-SUBMISSION CONFIRMATION & CLOSE PAGE -->
+  <div id="postSubmitModal" class="modal-backdrop" style="display: none;">
+    <div class="liquid-glass modal-window post-submit-card">
+      <div class="success-neon-ring">✓</div>
+      <span class="ref-id-chip" id="postSubmitRefBadge">ENQUIRY REF: #NX-0000</span>
+      <h3 id="postSubmitTitle" class="post-title">താങ്കളുടെ അപേക്ഷാ വിവരങ്ങൾ തയ്യാറായിക്കഴിഞ്ഞു!</h3>
+      <p id="postSubmitDesc" class="post-desc">
+        വാട്സ്ആപ്പിൽ <strong>'Send'</strong> ബട്ടൺ അമർത്തി മെസ്സേജ് അയച്ചു എന്ന് ഉറപ്പാക്കുക. താങ്കൾ നൽകിയ വിവരങ്ങൾ പരിശോധിച്ച ശേഷം ഞങ്ങളുടെ പ്രതിനിധി വാട്സ്ആപ്പിലൂടെ താങ്കളുമായി ബന്ധപ്പെടുന്നതാണ്.
+      </p>
+
+      <div class="post-actions-stack">
+        <button type="button" class="skeuo-btn-resend" onclick="retriggerWhatsAppLink()" id="postResendBtn">
+          ↻ വാട്സ്ആപ്പ് വീണ്ടും തുറക്കുക (Re-open WhatsApp)
+        </button>
+        <button type="button" class="skeuo-btn-closepage" onclick="terminatePortalSession()" id="postClosePageBtn">
+          ✕ Close the Page / പേജ് ക്ലോസ് ചെയ്യുക
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Data & Application Logic Scripts -->
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
